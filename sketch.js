@@ -247,6 +247,7 @@ var drawPrev;
 	// Body variables
 	var bodyBase;
 	var blank;
+
 		// Blue
 		var bodyWatchBlue;
 		var bodyWaveBlue;
@@ -265,6 +266,7 @@ var drawPrev;
 		var bodyWorkGreen;
 
 	// Face variables
+
 		// Blue
 		var faceBlob;
 		var faceCircle;
@@ -299,6 +301,7 @@ var drawPrev;
 	var clothesSoothing;
 
 	// Background variables
+
 		// City
 		var cityGlow;
 		var cityNight;
@@ -556,6 +559,7 @@ function setup() {
 function draw() {
 	background(255);
 
+	// Draws function
 	drawFunction();
 }
 
@@ -573,20 +577,23 @@ function makeEnterButton() {
 	enterButton.locate(windowWidth / 2 - windowFolder.width / 2, windowHeight / 2 
 		- windowFolder.height / 2);
 
+	// Allow enter button folder to open and close on hover and enter site
 	enterButton.onHover = enterButtonHover;
 	enterButton.onPress = enterButtonPressed;
 	enterButton.onOutside = enterButtonOnOutside;
 }
 
+// Folder opens on hover
 enterButtonHover = function() {
-	// Folder opens on hover
 	enterButton.image = windowOpenFolder;
 }
 
+// Enters site
 enterButtonPressed = function() {
 	drawFunction = drawWindow;
 }
 
+// Folder closes when not hovering on top of folder
 enterButtonOnOutside = function() {
 	enterButton.image = windowFolder;
 }
@@ -608,10 +615,12 @@ function makeContinueButton() {
 	continueButton.onPress = continueButtonPressed;
 }
 
+// When the continue button is pressed, it goes to the next page
 continueButtonPressed = function() {
 	drawFunction = drawNext;
 }
 
+// Allow back box to navigate to the previous page
 function makeBackButton() {
 	// Create clickable back button
 	backButton = new Clickable();
@@ -628,6 +637,7 @@ function makeBackButton() {
 	backButton.onPress = backButtonPressed;
 }
 
+// Back button goes to previous page
 backButtonPressed = function() {
 	drawFunction = drawPrev;
 }
@@ -675,6 +685,7 @@ drawColor = function() {
 	// Draw the continue button
 	continueButton.draw();
 
+	// Text is aligned left for questions and answer options
 	textAlign(LEFT);
 
 	// Draw question
@@ -815,6 +826,7 @@ drawFace = function() {
 	// Draw the back button
 	backButton.draw();
 
+	// Text is aligned left for questions and answer options
 	textAlign(LEFT);
 
 	// Draw question
@@ -976,6 +988,7 @@ drawEyes = function() {
 	// Draw the back button
 	backButton.draw();
 
+	// Text is aligned left for questions and answer options
 	textAlign(LEFT);
 
 	// Draw question
@@ -1065,6 +1078,7 @@ drawBrows = function() {
 	// Draw the back button
 	backButton.draw();
 
+	// Text is aligned left for questions and answer options
 	textAlign(LEFT);
 
 	// Draw question
@@ -1154,6 +1168,7 @@ drawMouth = function() {
 	// Draw the back button
 	backButton.draw();
 
+	// Text is aligned left for questions and answer options
 	textAlign(LEFT);
 
 	// Draw question
@@ -1243,6 +1258,7 @@ drawAcc = function() {
 	// Draw the back button
 	backButton.draw();
 
+	// Text is aligned left for questions and answer options
 	textAlign(LEFT);
 
 	// Draw question
@@ -1332,6 +1348,7 @@ drawBody = function() {
 	// Draw the back button
 	backButton.draw();
 
+	// Text is aligned left for questions and answer options
 	textAlign(LEFT);
 
 	// Draw question
@@ -1557,6 +1574,7 @@ drawItems = function() {
 	// Draw the back button
 	backButton.draw();
 
+	// Text is aligned left for questions and answer options
 	textAlign(LEFT);
 
 	// Draw question
@@ -1646,6 +1664,7 @@ drawBackground = function() {
 	// Draw the back button
 	backButton.draw();
 
+	// Text is aligned left for questions and answer options
 	textAlign(LEFT);
 
 	// Draw question
@@ -1711,6 +1730,7 @@ drawBackground = function() {
 	drawPrev = drawItems;
 }
 
+// When character is done, prompt user to close the window and take a picture
 drawDone = function() {
 	// Draw big window png
 	image(windowBig, width / 2, height / 2);
@@ -1748,6 +1768,7 @@ drawDone = function() {
 	drawPrev = drawBackground;
 }
 
+// Small window is not displayed so character is in full view
 drawPicture = function() {
 	// Draw big window png
 	image(windowBig, width / 2, height / 2);
